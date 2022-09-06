@@ -94,6 +94,9 @@ GEM
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -199,7 +202,9 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
+    temple (0.8.2)
     thor (1.2.1)
+    tilt (2.0.11)
     timeout (0.3.0)
     turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
@@ -233,6 +238,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails (~> 1.1, >= 1.1.1)
   debug
+  haml (~> 5.2, >= 5.2.2)
   httparty (~> 0.20.0)
   importmap-rails
   jbuilder

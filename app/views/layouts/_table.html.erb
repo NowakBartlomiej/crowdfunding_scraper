@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <th>Id</th>
+    <th>Slug</th>
+    <th>Amount</th>
+    <th>Donators</th>
+    <th>Percentage %</th>
+  </thead>
+
+  <tbody>
+  <% @collections.each do |collection| %>
+
+    <tr>
+
+      <td> <%= collection.id %> </td>
+      <td> <%= collection.slug %> </td>
+      <td> <%= format_amount( collection.amount )%> </td>
+      <td> <%= collection.donator %> </td>
+      <td> <%= number_to_percentage(collection.percentage, precision: 0) %> </td>
+
+    </tr>
+
+  <% end %>
+  </tbody>
+
+</table>

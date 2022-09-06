@@ -24,6 +24,8 @@ gem 'httparty', '~> 0.20.0'
 
 gem 'cssbundling-rails', '~> 1.1', '>= 1.1.1'
 
+gem 'haml', '~> 5.2', '>= 5.2.2'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
