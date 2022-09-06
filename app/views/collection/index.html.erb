@@ -1,1 +1,13 @@
-<h1>Hello Rails</h1>
+<div class="container-sm">
+  <div class="card"> test </div>
+  100% wide until small breakpoint
+  <% @collections.each do |collection| %>
+    <br>
+    <%= collection.slug %>
+  <% end %>
+
+
+
+
+  <%= @collections.first(10).pluck(:slug).join("\n") %>
+</div>
