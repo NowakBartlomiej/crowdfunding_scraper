@@ -1,5 +1,5 @@
 <table class="table table-striped">
-  <thead>
+  <thead class="text-center">
     <th>Id</th>
     <th>Slug</th>
     <th>Amount</th>
@@ -7,7 +7,7 @@
     <th>Percentage %</th>
   </thead>
 
-  <tbody>
+  <tbody class="text-center">
   <% @collections.each do |collection| %>
 
     <tr>
@@ -22,5 +22,24 @@
 
   <% end %>
   </tbody>
+
+  <tfoot class="text-center fw-bold bg-info bg-gradient">
+    <tr>
+      <td colspan='4'>Sum of donates</td>
+
+      <%
+        sum = 0
+        @collections.each do |c|
+          sum += c.amount.to_d
+        end
+      %>
+
+      <td> <%= format_amount(sum) %></td>
+
+
+
+
+    </tr>
+  </tfoot>
 
 </table>

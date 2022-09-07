@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+  include Pagy::Frontend
   def format_amount(amount)
     ActionController::Base.helpers.number_to_currency(amount.to_f,
                                                       unit: "PLN",
