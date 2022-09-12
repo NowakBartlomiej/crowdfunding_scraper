@@ -32,6 +32,7 @@ module Scraper
     def get_data_from_category(category)
       page = 0
       basic_url = "https://pomagam.pl"
+      i = 1
 
       url = change_url(page, category)
       unparsed_page = HTTParty.get(url)
@@ -52,33 +53,60 @@ module Scraper
 
           data << {
             # DLUZSZE POBIERANIE DANYCH
+            # number: i,
             category: category,
-            id_collection: collection_card.css("div.content-wrap").css("span")[0].attributes["id"].value[7...].to_i,
+            external_collection_id: collection_card.css("div.content-wrap").css("span")[0].attributes["id"].value[7...],
             title: collection_card.attributes["title"].value,
             slug: slug,
             amount: parsed_stats[:pledge],
             number_of_donors: parsed_stats[:count],
             percentage: parsed_stats[:percentage]
-
-
-            # KROTSZE POBIERANIE DANYCH
-            # category: category,
-            # title: collection_card.attributes["title"].value,
-            # slug: collection_card.children[1].attributes["href"].value,
-            # id_collection: collection_card.css("div.content-wrap").css("span")[0].attributes["id"].value[7...].to_i,
-            # amount:  collection_card.css("div.content-wrap").css("span").children.text
           }
+          # i = i + 1
 
-          Collection.create()
-          puts data
 
+          data.each do |fetched_data_collection|
+            # binding.pry
+            collection = Collection.find_by(external_collection_id: fetched_data_collection[:external_collection_id])
+            if collection
+              next if collection.updated_at.to_date == Time.current.to_date
+
+              # Collection.update(parse_data(fetched_data_collection).except(:external_collection_id))
+              Collection.update(collection_update_data(fetched_data_collection))
+            else
+              # Collection.create(parse_data(fetched_data_collection))
+
+              Collection.create(collection_create_data(fetched_data_collection))
+            end
+          end
+          # puts data
         end
 
         page = page + 1
-
       end
 
-       # puts data
+
+
+      # puts data
+    end
+
+    def collection_update_data(data)
+      {
+        **collection_create_data(data),
+        external_collection_id: data[:external_collection_id],
+      }
+    end
+
+    def collection_create_data(data)
+      {
+        category: data[:category],
+        slug: data[:slug],
+        amount: data[:amount],
+        donator: data[:amount],
+        percentage: data[:percentage],
+        external_collection_id: data[:external_collection_id],
+        title: data[:title],
+      }
     end
 
     def to_json(body)
