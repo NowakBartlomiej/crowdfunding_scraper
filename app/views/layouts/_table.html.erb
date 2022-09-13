@@ -1,14 +1,13 @@
 <table class="table table-striped">
   <thead class="text-center">
 
-  <!--    <th>Id</th>-->
+<!--  <th>Id</th>-->
     <th>Category</th>
     <th>Collection Id</th>
     <th>Title</th>
     <th>Slug</th>
     <th>Amount</th>
-    <th>Number of Donators</th>
-    <th>Percentage of Target</th>
+
 
   </thead>
 
@@ -23,28 +22,27 @@
       <td> <%= collection.title %> </td>
       <td> <%= collection.slug %> </td>
       <td> <%= format_amount( collection.amount )%> </td>
-      <td> <%= collection.donator %> </td>
-      <td> <%= number_to_percentage(collection.percentage, precision: 0) %> </td>
+
 
     </tr>
 
   <% end %>
   </tbody>
 
-  <tfoot class="text-center fw-bold bg-info bg-gradient">
-    <tr>
-      <td colspan='6'>Sum of donates</td>
+<!--  <tfoot class="text-center fw-bold bg-info bg-gradient">-->
+<!--    <tr>-->
+<!--      <td colspan='5'>Sum of donates</td>-->
 
-      <%
-        sum = 0
-        @collections.each do |c|
-          sum += c.amount.to_d
-        end
+      <%#
+<!--        sum = 0-->
+<!--        @collections.each do |c|-->
+<!--          sum += c.amount.to_d-->
+<!--        end-->
       %>
 
-      <td> <%= format_amount(sum) %></td>
+<!--      <td> <%#= format_amount(sum) %></td>-->
 
-    </tr>
-  </tfoot>
+<!--    </tr>-->
+<!--  </tfoot>-->
 
 </table>
