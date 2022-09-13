@@ -4,8 +4,8 @@ require 'httparty'
 
 module Scraper
   class FetchDataService
-    POPULARNE = "popularne" #14 stron
-    LECZENIE = "leczenie" #704 stron
+    POPULARNE = "popularne" #14 stron ZROBIONE
+    LECZENIE = "leczenie" #704 stron ZROBIONE
     POTRZEBY = "potrzeby" #970 stron
     ZWIERZETA = "zwierzeta" # 1755 stron
     PROJEKTY = "projekty" # 992 stron
@@ -14,7 +14,7 @@ module Scraper
     # Lacznie około zbiorek: 26610
 
     def runner
-      get_data_from_category(POPULARNE)
+      get_data_from_category(LECZENIE)
 
 
 
@@ -80,6 +80,7 @@ module Scraper
             end
           end
           # puts data
+          puts page
         end
 
         page = page + 1
