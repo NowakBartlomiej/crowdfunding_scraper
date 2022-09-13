@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_093137) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_085744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "collections", force: :cascade do |t|
     t.string "slug"
     t.decimal "amount", precision: 13, scale: 2
-    t.integer "donator"
-    t.decimal "percentage", precision: 13, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "external_collection_id"

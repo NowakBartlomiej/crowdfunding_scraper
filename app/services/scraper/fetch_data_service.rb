@@ -14,7 +14,7 @@ module Scraper
     # Lacznie około zbiorek: 26610
 
     def runner
-      get_data_from_category(LECZENIE)
+
 
 
 
