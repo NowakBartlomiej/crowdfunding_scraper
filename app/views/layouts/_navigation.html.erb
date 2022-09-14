@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid justify-content-center">
+    <h1>Total Sum of Donates:
+      <span class="text-success">
+      <%= format_amount(Collection.sum(:amount))%>
+      </span>
+    </h1>
+
+
+  </div>
+</nav>

@@ -22,6 +22,20 @@ gem 'activesupport', '~> 7.0', '>= 7.0.3.1'
 
 gem 'httparty', '~> 0.20.0'
 
+gem 'cssbundling-rails', '~> 1.1', '>= 1.1.1'
+
+gem 'haml', '~> 5.2', '>= 5.2.2'
+
+gem 'sidekiq'
+
+gem 'elasticsearch'
+
+gem 'whenever', require: false
+
+gem 'pagy'
+
+gem 'watir'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
