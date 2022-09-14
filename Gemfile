@@ -30,6 +30,8 @@ gem 'sidekiq'
 
 gem 'elasticsearch'
 
+gem 'whenever', require: false
+
 gem 'pagy'
 
 gem 'watir'
