@@ -28,6 +28,8 @@ gem 'haml', '~> 5.2', '>= 5.2.2'
 
 gem 'sidekiq'
 
+gem 'elasticsearch'
+
 gem 'pagy'
 
 gem 'watir'
