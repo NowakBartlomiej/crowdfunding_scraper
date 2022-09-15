@@ -1,0 +1,29 @@
+<div class="container-sm">
+<!--<table class="table table-striped">-->
+<!--  <thead class="text-center">-->
+
+  <!--  <th>Id</th>-->
+<!--  <th>Date</th>-->
+<!--  <th>Sum</th>-->
+
+<!--  </thead>-->
+
+<!--  <tbody class="text-center">-->
+  <%# @daily_sum.each do |sum| %>
+
+<!--    <tr>-->
+
+<!--      <td> <%#= sum.created_at.to_s[0...-13] %></td>-->
+<!--      <td> <%#= format_amount(sum.daily_sum) %> </td>-->
+
+<!--    </tr>-->
+
+  <%# end %>
+
+<!--  </tbody>-->
+
+<!--</table>-->
+
+  <%= line_chart DailySummary.group_by_day(:created_at).sum(:daily_sum) %>
+
+</div>

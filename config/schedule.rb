@@ -1,6 +1,10 @@
-every 3.hours do
+every 2.hours do
   # runner "Scraper::FetchDataService.new.runner"
   rake "fetch_pomagam:fetch_data"
+end
+
+every 1.day, at: '11:59 pm' do
+  rake "sum_amount:sum_pomagam"
 end
 
 

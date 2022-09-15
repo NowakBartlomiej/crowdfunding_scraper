@@ -1,0 +1,16 @@
+<div class="container-sm">
+
+  <br>
+
+  <div class="card text-center">
+    <div class="card-header fs-3">
+      Today we collected
+    </div>
+    <div class="card-body">
+      <h1 class="card-title p-5 text-success" >
+        <%= format_amount(Collection.sum(:amount)) %>
+      </h1>
+    </div>
+  </div>
+
+</div>

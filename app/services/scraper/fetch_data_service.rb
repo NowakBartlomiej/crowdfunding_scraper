@@ -21,6 +21,11 @@ module Scraper
       get_data_from_category(PROJEKTY)
     end
 
+    def sum_daily_amount
+      sum = Collection.sum(:amount)
+      DailySummary.create(daily_sum: sum)
+    end
+
     def data
       @data ||= []
     end
@@ -61,9 +66,9 @@ module Scraper
 
           # data.each do |fetched_data_collection|
 
-            # collection = Collection.find_by(external_collection_id: fetched_data_collection[:external_collection_id])
-            # if collection
-            #   next if collection.updated_at.to_date == Time.current.to_date
+            # collections = Collection.find_by(external_collection_id: fetched_data_collection[:external_collection_id])
+            # if collections
+            #   next if collections.updated_at.to_date == Time.current.to_date
             #
             #   # Collection.update(parse_data(fetched_data_collection).except(:external_collection_id))
             #   Collection.update(collection_update_data(fetched_data_collection))

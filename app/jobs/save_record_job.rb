@@ -5,17 +5,17 @@
 #
 #   def perform(collection_id)
 #     binding.pry
-#     @collection = Collection.find(collection_id)
+#     @collections = Collection.find(collection_id)
 #     result = fetch_data
 #
 #     if result.code == 200
-#       @collection.update()
+#       @collections.update()
 #     end
 #   end
 #
 #   private
 #
 #   def fetch_data
-#     HTTParty.get("#{POMAGAM_URL}/#{@collection.slug}/stats")
+#     HTTParty.get("#{POMAGAM_URL}/#{@collections.slug}/stats")
 #   end
 # end

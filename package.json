@@ -5,6 +5,8 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
+    "chart.js": "^3.9.1",
+    "chartkick": "^4.2.0",
     "sass": "^1.54.8"
   },
   "scripts": {
